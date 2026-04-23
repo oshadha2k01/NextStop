@@ -14,8 +14,8 @@ const Hero = () => {
           unoptimized
           className="object-cover"
         />
-        {/* Deep Gradient Overlay to highlight the map details and ensure text readability */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#1F2937] via-[#1F2937]/60 to-[#1F2937]/40"></div>
+        {/* Deep Gradient Overlay with subtle blur to highlight the map details and ensure text readability */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#1F2937] via-[#1F2937]/60 to-[#1F2937]/40 backdrop-blur-[2px]"></div>
       </div>
 
       <div className="relative z-10 max-w-5xl mx-auto text-center text-white">
