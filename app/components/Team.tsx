@@ -6,7 +6,7 @@ const Team = () => {
     { name: "Dhananjaya Weerakoon", role: "IoT Based Bus tracking System and ETA Prediction", image: "/team/member1.jpeg" },
     { name: "Oshadha Pathiraja", role: "Central Fleet Management and Route Optimization Engine", image: "/team/member2.png" },
     { name: "Vidumini Chandrasekara", role: "Mobile-Based Passenger Interaction System", image: "/team/member3.jpeg" },
-    { name: "[Member 4]", role: "Admin Web & Data Pipeline", image: null },
+    { name: "Raveesha Abeysekara", role: "Vision-Based Passenger Counting and Occupancy Monitoring", image: "/team/member4.png" },
   ];
 
   return (
@@ -23,12 +23,17 @@ const Team = () => {
             <div className="w-32 h-32 rounded-full overflow-hidden mx-auto mb-4 border-2 border-[#FF6B35] shadow-inner">
               <img src="/team/supervisor.jpg" alt="Mr. Nelum Chathuranga" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
             </div>
-            <h3 className="font-bold text-lg text-[#1F2937]">Mr. Nelum Chathuranga</h3>
+            <h3 className="font-bold text-lg text-[#1F2937]">Mr. Nelum Amarasena</h3>
             <p className="text-[#FF6B35] text-sm font-bold mt-1">Supervisor</p>
             <div className="text-gray-500 text-xs mt-2 space-y-1">
               <p>Senior Lecturer</p>
               <p>Faculty of Computing, SLIIT</p>
-              <p className="text-gray-400 font-medium pt-1 italic">{`nelum.a@sliit.lk`}</p>
+              <a 
+                href="mailto:nelum.a@sliit.lk" 
+                className="text-gray-400 font-medium pt-1 italic cursor-pointer hover:text-[#FF6B35] transition-colors"
+              >
+                {`nelum.a@sliit.lk`}
+              </a>
             </div>
           </div>
           <div className="text-center bg-white p-6 rounded-2xl shadow-sm border border-gray-100 min-w-[280px] hover:border-[#FF6B35] transition-all group">
@@ -40,7 +45,12 @@ const Team = () => {
             <div className="text-gray-500 text-xs mt-2 space-y-1">
               <p>Senior Lecturer</p>
               <p>Faculty of Computing, SLIIT</p>
-              <p className="text-gray-400 font-medium pt-1 italic">{`uthpala.s@sliit.lk`}</p>
+              <a 
+                href="mailto:uthpala.s@sliit.lk" 
+                className="text-gray-400 font-medium pt-1 italic cursor-pointer hover:text-[#FF6B35] transition-colors"
+              >
+                {`uthpala.s@sliit.lk`}
+              </a>
             </div>
           </div>
         </div>
