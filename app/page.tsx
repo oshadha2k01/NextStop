@@ -24,11 +24,11 @@ export default function NextStopPortfolio() {
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
     if (!searchQuery) return;
-    
+
     const target = searchQuery.toLowerCase();
     const sections = ['home', 'domain', 'features', 'technologies', 'milestones', 'documents', 'team', 'contact'];
     const match = sections.find(s => s.includes(target) || target.includes(s));
-    
+
     if (match) {
       document.getElementById(match)?.scrollIntoView({ behavior: 'smooth' });
       setSearchQuery('');
@@ -65,7 +65,7 @@ export default function NextStopPortfolio() {
 
   return (
     <div className={`${inter.className} min-h-screen bg-[#F7F8FA] text-[#1F2937] selection:bg-[#FF6B35] selection:text-white overflow-x-hidden`}>
-      <Navbar 
+      <Navbar
         activeSection={activeSection}
         isMenuOpen={isMenuOpen}
         setIsMenuOpen={setIsMenuOpen}
@@ -73,7 +73,7 @@ export default function NextStopPortfolio() {
         setSearchQuery={setSearchQuery}
         handleSearch={handleSearch}
       />
-      
+
       <main>
         <Hero />
         <Domain />

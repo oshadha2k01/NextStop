@@ -32,21 +32,24 @@ const Navbar: React.FC<NavbarProps> = ({
   ];
 
   return (
-    <nav className="fixed w-full top-0 z-50 bg-white/95 backdrop-blur shadow-sm border-b border-gray-200">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-        <div className="flex items-center gap-2 shrink-0">
-          <NextImage src="/logo.png" alt="NextStop Logo" width={80} height={80} className="object-contain w-12 h-12 sm:w-16 sm:h-16" />
-          <span className="font-extrabold text-2xl sm:text-3xl text-[#FF6B35] tracking-tight">NextStop</span>
+    <nav className="fixed w-full top-0 z-50 bg-white border-b border-gray-100 shadow-sm">
+      <div className="max-w-[1440px] mx-auto px-6 lg:px-12 h-20 flex items-center justify-between">
+        {/* Logo & Title */}
+        <div className="flex items-center gap-3">
+          <NextImage src="/logo.png" alt="NextStop Logo" width={80} height={80} className="object-contain w-14 h-14 sm:w-20 sm:h-20" />
+          <span className="font-bold text-2xl text-[#FF6B35] tracking-tight">NextStop</span>
         </div>
-        <div className="hidden md:flex items-center space-x-8">
-          <div className="flex space-x-6 text-sm font-semibold">
+
+        {/* Navigation & Search - Matching TripMate layout */}
+        <div className="hidden lg:flex items-center gap-12">
+          <div className="flex items-center space-x-8">
             {navLinks.map((link) => (
               <a
                 key={link.id}
                 href={`#${link.id}`}
-                className={`transition-all duration-300 pb-1 border-b-2 ${activeSection === link.id
-                  ? 'text-[#FF6B35] border-[#FF6B35]'
-                  : 'text-gray-600 border-transparent hover:text-[#FF6B35]'
+                className={`relative text-[15px] font-medium transition-all duration-300 pb-2 border-b-2 ${activeSection === link.id
+                    ? 'text-[#FF6B35] border-[#FF6B35]'
+                    : 'text-[#1F2937] border-transparent hover:text-[#FF6B35]'
                   }`}
               >
                 {link.label}
@@ -54,29 +57,28 @@ const Navbar: React.FC<NavbarProps> = ({
             ))}
           </div>
 
-          {/* Search Bar */}
-          <form onSubmit={handleSearch} className="relative group">
-            <div className="flex items-center bg-[#F7F8FA] rounded-full pl-4 pr-1 py-1 border border-gray-200 focus-within:border-[#FF6B35] focus-within:bg-white transition-all w-48 lg:w-64">
+          <div className="flex items-center gap-3">
+            <div className="relative">
               <input
                 type="text"
-                placeholder="Search sections..."
+                placeholder="Search..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="bg-transparent border-none outline-none focus:ring-0 text-sm w-full text-gray-700 placeholder-[#FF6B35]/60"
+                className="bg-white border border-gray-200 rounded-full px-5 py-2 text-sm w-56 focus:outline-none focus:border-[#FF6B35] transition-all placeholder-gray-400 shadow-inner"
               />
-              <button
-                type="submit"
-                className="bg-[#FF6B35] text-white p-1.5 rounded-full hover:bg-[#E6521F] transition-all flex items-center justify-center shrink-0"
-              >
-                <Search size={16} />
-              </button>
             </div>
-          </form>
+            <button
+              onClick={(e) => handleSearch(e as any)}
+              className="bg-[#FF6B35] text-white p-2.5 rounded-full hover:bg-[#E6521F] transition-all flex items-center justify-center shrink-0 shadow-md active:scale-95"
+            >
+              <Search size={20} />
+            </button>
+          </div>
         </div>
 
-        {/* Mobile Menu Button */}
+        {/* Mobile Toggle */}
         <button
-          className="md:hidden p-2 text-[#FF6B35] transition-colors"
+          className="lg:hidden p-2 text-[#FF6B35]"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
           {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
@@ -84,37 +86,35 @@ const Navbar: React.FC<NavbarProps> = ({
       </div>
 
       {/* Mobile Menu Drawer */}
-      <div className={`md:hidden absolute w-full bg-white border-b border-gray-200 transition-all duration-300 overflow-hidden ${isMenuOpen ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'}`}>
-        <div className="px-4 pt-2 pb-6 space-y-4">
-          <form onSubmit={handleSearch} className="relative">
-            <div className="flex items-center bg-[#F7F8FA] rounded-full pl-4 pr-1 py-1 border border-gray-200 focus-within:border-[#FF6B35] focus-within:bg-white transition-all w-full">
-              <input
-                type="text"
-                placeholder="Search sections..."
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                className="bg-transparent border-none outline-none focus:ring-0 text-sm w-full text-gray-700 placeholder-[#FF6B35]/60"
-              />
-              <button
-                type="submit"
-                className="bg-[#FF6B35] text-white p-1.5 rounded-full hover:bg-[#E6521F] transition-all flex items-center justify-center shrink-0"
-              >
-                <Search size={16} />
-              </button>
-            </div>
-          </form>
-
-          <div className="flex flex-col space-y-3 px-2">
+      <div className={`lg:hidden absolute w-full bg-white border-b border-gray-100 shadow-xl transition-all duration-300 overflow-hidden ${isMenuOpen ? 'max-h-[600px] opacity-100' : 'max-h-0 opacity-0'}`}>
+        <div className="px-6 py-8 flex flex-col gap-6">
+          <div className="flex flex-col gap-4">
             {navLinks.map((link) => (
               <a
                 key={link.id}
                 href={`#${link.id}`}
                 onClick={() => setIsMenuOpen(false)}
-                className={`text-sm font-semibold transition-colors ${activeSection === link.id ? 'text-[#FF6B35]' : 'text-gray-600 hover:text-[#FF6B35]'}`}
+                className={`text-lg font-semibold transition-colors ${activeSection === link.id ? 'text-[#FF6B35]' : 'text-gray-600'
+                  }`}
               >
                 {link.label}
               </a>
             ))}
+          </div>
+          <div className="flex items-center gap-3 pt-6 border-t border-gray-50">
+            <input
+              type="text"
+              placeholder="Search..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="bg-gray-50 border-none rounded-full px-5 py-3 text-sm w-full focus:ring-2 focus:ring-[#FF6B35]"
+            />
+            <button
+              onClick={(e) => handleSearch(e as any)}
+              className="bg-[#FF6B35] text-white p-3 rounded-full shadow-lg"
+            >
+              <Search size={20} />
+            </button>
           </div>
         </div>
       </div>
