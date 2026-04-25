@@ -26,7 +26,7 @@ const Navbar: React.FC<NavbarProps> = ({
     { id: 'features', label: 'Features' },
     { id: 'technologies', label: 'Technologies' },
     { id: 'milestones', label: 'Milestones' },
-    { id: 'documents', label: 'Documents' },
+    { id: 'documents', label: 'Resources' },
     { id: 'team', label: 'Team' },
     { id: 'contact', label: 'Contact' }
   ];
