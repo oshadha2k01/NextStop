@@ -3,8 +3,14 @@ import { FileText, Download } from 'lucide-react';
 
 const Documents = () => {
   const docs = [
-    'Project Charter', 'Proposal Document', 'Check List Documents', 'Proposal Presentation',
-    'Progress Presentation-1', 'Progress Presentation-2', 'Final Presentation', 'Final Documentation'
+    { title: 'Project Charter', path: '/documents/charter.pdf' },
+    { title: 'Proposal Document', path: '#' },
+    { title: 'Check List Documents', path: '#' },
+    { title: 'Proposal Presentation', path: '#' },
+    { title: 'Progress Presentation-1', path: '#' },
+    { title: 'Progress Presentation-2', path: '#' },
+    { title: 'Final Presentation', path: '#' },
+    { title: 'Final Documentation', path: '#' }
   ];
 
   return (
@@ -19,10 +25,16 @@ const Documents = () => {
           {docs.map((doc, i) => (
             <div key={i} className="flex flex-col items-center p-6 bg-[#F7F8FA] rounded-xl border border-gray-200 hover:border-[#FF6B35] transition-colors cursor-pointer group">
               <FileText size={40} className="text-gray-400 mb-4 group-hover:text-[#FF6B35]" />
-              <h4 className="font-bold text-[#1F2937] text-center text-sm mb-4">{doc}</h4>
-              <span className="text-[#FF6B35] text-xs font-bold uppercase tracking-wider flex items-center gap-1 mt-auto bg-white px-4 py-2 rounded-full border border-gray-200 group-hover:bg-[#FF6B35] group-hover:text-white transition-colors">
+              <h4 className="font-bold text-[#1F2937] text-center text-sm mb-4">{doc.title}</h4>
+              <a 
+                href={doc.path}
+                target={doc.path !== '#' ? "_blank" : undefined}
+                rel="noopener noreferrer"
+                className="text-[#FF6B35] text-xs font-bold uppercase tracking-wider flex items-center gap-1 mt-auto bg-white px-4 py-2 rounded-full border border-gray-200 group-hover:bg-[#FF6B35] group-hover:text-white transition-colors"
+                onClick={(e) => doc.path === '#' && e.preventDefault()}
+              >
                 View <Download size={14} />
-              </span>
+              </a>
             </div>
           ))}
         </div>
