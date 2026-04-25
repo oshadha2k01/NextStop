@@ -1,6 +1,5 @@
 'use client';
 import React, { useState, useEffect } from 'react';
-import { Inter } from 'next/font/google';
 
 // Import Components
 import Navbar from './components/Navbar';
@@ -13,8 +12,6 @@ import Documents from './components/Documents';
 import Team from './components/Team';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
-
-const inter = Inter({ subsets: ['latin'] });
 
 export default function NextStopPortfolio() {
   const [activeSection, setActiveSection] = useState('home');
@@ -64,7 +61,7 @@ export default function NextStopPortfolio() {
   }, []);
 
   return (
-    <div className={`${inter.className} min-h-screen bg-[#F7F8FA] text-[#1F2937] selection:bg-[#FF6B35] selection:text-white overflow-x-hidden`}>
+    <div className="min-h-screen bg-[#F7F8FA] text-[#1F2937] selection:bg-[#FF6B35] selection:text-white overflow-x-hidden font-sans">
       <Navbar
         activeSection={activeSection}
         isMenuOpen={isMenuOpen}
@@ -73,7 +70,7 @@ export default function NextStopPortfolio() {
         setSearchQuery={setSearchQuery}
         handleSearch={handleSearch}
       />
-
+      
       <main>
         <Hero />
         <Domain />
