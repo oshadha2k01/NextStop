@@ -6,15 +6,15 @@ const Documents = () => {
 
   const projectDocs = [
     { title: 'Project Charter', path: '/documents/charter.pdf' },
-    { title: 'Proposal Document', path: '#' },
+    { title: 'Proposal Document', path: '/documents/proposal.pdf' },
     { title: 'Check List Documents', path: '#' },
     { title: 'Final Documentation', path: '#' }
   ];
 
   const presentations = [
-    { title: 'Proposal Presentation', path: '#' },
-    { title: 'Progress Presentation-1', path: '#' },
-    { title: 'Progress Presentation-2', path: '#' },
+    { title: 'Proposal Presentation', path: '/presentation/proposal.pdf' },
+    { title: 'Progress Presentation-1', path: '/presentation/pp1.pdf' },
+    { title: 'Progress Presentation-2', path: '/presentation/pp2.pdf' },
     { title: 'Final Presentation', path: '#' }
   ];
 
