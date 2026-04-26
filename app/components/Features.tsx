@@ -1,5 +1,5 @@
 import React from 'react';
-import { MapPin, Clock, Camera, BrainCircuit, FileText, Smartphone, ShieldAlert, Users, Radio, Zap } from 'lucide-react';
+import { MapPin, Clock, Camera, BrainCircuit, FileText, Smartphone, ShieldAlert, Users, Radio, Zap, ShieldCheck, MessageSquareQuote } from 'lucide-react';
 
 const Features = () => {
   const features = [
@@ -52,6 +52,16 @@ const Features = () => {
       title: "Live Telemetry Hub", 
       desc: "The Driver App broadcasts real-time telemetry including speed, location, and dynamic ETAs directly to passengers through a low-latency IoT gateway.", 
       icon: <Zap size={32} /> 
+    },
+    { 
+      title: "Super Admin Control", 
+      desc: "Centralized management of all buses, owners, and drivers. Includes real-time tracking, route management, feedback analysis, and driver behavior monitoring.", 
+      icon: <ShieldCheck size={32} /> 
+    },
+    { 
+      title: "Feedback & Complaints", 
+      desc: "Integrated reporting system for passengers to provide feedback on journey conditions, driver behavior, and file complaints for administrative action.", 
+      icon: <MessageSquareQuote size={32} /> 
     }
   ];
 
@@ -64,7 +74,7 @@ const Features = () => {
           <p className="text-gray-500 mt-4">Discover the innovative features that make NextStop exceptional.</p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
+        <div className="grid md:grid-cols-3 gap-8">
           {features.map((feat, i) => (
             <div key={i} className="bg-white p-8 rounded-2xl shadow-sm border border-gray-200 hover:border-[#FF6B35] hover:shadow-md transition-all group flex flex-col">
               <div className="w-14 h-14 rounded-xl bg-[#FF6B35]/10 flex items-center justify-center text-[#FF6B35] mb-6 group-hover:bg-[#FF6B35] group-hover:text-white transition-colors">
