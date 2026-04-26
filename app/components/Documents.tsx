@@ -7,7 +7,7 @@ const Documents = () => {
   const projectDocs = [
     { title: 'Project Charter', path: '/documents/charter.pdf' },
     { title: 'Proposal Document', path: '/documents/proposal.pdf' },
-    { title: 'Check List Documents', path: '#' },
+    { title: 'Check List Documents', path: '/documents/checklist.pdf' },
     { title: 'Final Documentation', path: '#' }
   ];
 

@@ -15,7 +15,7 @@ const Technologies = () => {
     },
     { 
       title: "IoT & Hardware", 
-      desc: "Arduino, GPS modules, Thermal Sensors, and GSM/Wi-Fi for real-time edge processing on buses.", 
+      desc: "ESP32 Micro controller, Neo 8M GPS Module, and Analog Rain Sensor for real-time edge processing on buses.", 
       icon: <Cpu size={32} /> 
     },
     { 

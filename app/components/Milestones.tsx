@@ -30,7 +30,7 @@ const Milestones = () => {
       title: "Final Assessment",
       desc: "Comprehensive system review and hardware/software quality assessment. Final bug fixing, performance optimization, and user acceptance testing.",
       date: "May 2026",
-      marks: "19$",
+      marks: "19%",
       completion: "100%"
     },
     {
@@ -62,8 +62,8 @@ const Milestones = () => {
             <div
               key={i}
               className={`group overflow-hidden rounded-2xl border transition-all duration-300 ${activeIndex === i
-                  ? 'border-[#FF6B35] bg-white shadow-xl shadow-[#FF6B35]/5'
-                  : 'border-gray-100 bg-white hover:border-gray-200 shadow-sm'
+                ? 'border-[#FF6B35] bg-white shadow-xl shadow-[#FF6B35]/5'
+                : 'border-gray-100 bg-white hover:border-gray-200 shadow-sm'
                 }`}
             >
               <button
@@ -72,8 +72,8 @@ const Milestones = () => {
               >
                 <div className="flex items-center gap-5">
                   <div className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-xl transition-all duration-300 ${activeIndex === i
-                      ? 'bg-[#FF6B35] text-white scale-110 shadow-lg shadow-[#FF6B35]/30'
-                      : 'bg-gray-100 text-gray-400 group-hover:bg-[#FF6B35]/10 group-hover:text-[#FF6B35]'
+                    ? 'bg-[#FF6B35] text-white scale-110 shadow-lg shadow-[#FF6B35]/30'
+                    : 'bg-gray-100 text-gray-400 group-hover:bg-[#FF6B35]/10 group-hover:text-[#FF6B35]'
                     }`}>
                     {activeIndex === i ? <CheckCircle2 size={24} /> : <span className="font-bold text-lg">{i + 1}</span>}
                   </div>
