@@ -34,6 +34,15 @@ export default function NextStopPortfolio() {
   };
 
   useEffect(() => {
+    // Prevent the browser from restoring the previous scroll position on reload/revisit
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+    // Force scroll to top on initial load
+    window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
     const sections = ['home', 'domain', 'features', 'technologies', 'milestones', 'documents', 'team', 'contact'];
 
     const observerOptions = {
