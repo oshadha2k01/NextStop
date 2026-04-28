@@ -15,7 +15,7 @@ const Domain = () => {
     {
       title: "Methodology",
       image: "/domain/methodology.png",
-      content: "Our approach utilizes a robust microservices architecture. We combine an XGBoost machine learning algorithm for ETA prediction, YOLOv12 computer vision for crowd analysis at bus stops, and a Node.js central backend."
+      content: "Our approach utilizes a robust microservices architecture combining XGBoost for ETA prediction, YOLOv12 for crowd analysis, and a Node.js backend. This intelligence is delivered through highly responsive, cross-platform Flutter applications for both passengers and drivers, alongside a comprehensive React/Vite Super Admin dashboard for centralized fleet and feedback management."
     }
   ];
 
@@ -31,14 +31,14 @@ const Domain = () => {
         {/* Top Section: Cards with Images */}
         <div className="grid md:grid-cols-3 gap-8 mb-20">
           {imageDomains.map((d, i) => (
-            <div 
-              key={i} 
+            <div
+              key={i}
               className="group flex flex-col bg-white rounded-[2rem] border border-gray-100 shadow-sm hover:shadow-2xl hover:shadow-[#FF6B35]/10 transition-all duration-500 overflow-hidden"
             >
               <div className="h-56 overflow-hidden relative">
-                <img 
-                  src={d.image} 
-                  alt={d.title} 
+                <img
+                  src={d.image}
+                  alt={d.title}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-60"></div>
@@ -98,6 +98,8 @@ const Domain = () => {
               <li><span className="font-bold text-[#1F2937]">Digital Bus Hailing:</span> Created a real-time mobile feature allowing passengers to send their exact pickup location directly to the driver’s dashboard to prevent missed stops.</li>
               <li><span className="font-bold text-[#1F2937]">Cross-Platform Mobile Apps:</span> Developed synchronized Flutter applications for both passengers and drivers, powered by real-time WebSocket connections.</li>
               <li><span className="font-bold text-[#1F2937]">Dynamic Fare System:</span> Designed a Node.js/Express backend that automatically calculates ticket prices based on travel distance and official government rates.</li>
+              <li><span className="font-bold text-[#1F2937]">Super Admin Dashboard:</span> Implemented a comprehensive React/Vite web platform for authorities to monitor real-time fleet operations, manage routes, and oversee driver behavior.</li>
+              <li><span className="font-bold text-[#1F2937]">Feedback & Complaints System:</span> Developed an integrated reporting mechanism for passengers to provide insights on journey conditions and driver performance, ensuring quality of service.</li>
             </ul>
           </div>
         </div>

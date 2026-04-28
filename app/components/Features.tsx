@@ -74,7 +74,7 @@ const Features = () => {
           <p className="text-gray-500 mt-4">Discover the innovative features that make NextStop exceptional.</p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 lg:gap-8">
           {features.map((feat, i) => (
             <div key={i} className="bg-white p-8 rounded-2xl shadow-sm border border-gray-200 hover:border-[#FF6B35] hover:shadow-md transition-all group flex flex-col">
               <div className="w-14 h-14 rounded-xl bg-[#FF6B35]/10 flex items-center justify-center text-[#FF6B35] mb-6 group-hover:bg-[#FF6B35] group-hover:text-white transition-colors">
