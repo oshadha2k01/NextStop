@@ -15,7 +15,7 @@ const Documents = () => {
     { title: 'Proposal Presentation', path: '/presentation/proposal.pdf' },
     { title: 'Progress Presentation-1', path: '/presentation/pp1.pdf' },
     { title: 'Progress Presentation-2', path: '/presentation/pp2.pdf' },
-    { title: 'Final Presentation', path: '#' }
+    { title: 'Final Presentation', path: '/presentation/final.pdf' }
   ];
 
   const currentItems = activeTab === 'docs' ? projectDocs : presentations;
