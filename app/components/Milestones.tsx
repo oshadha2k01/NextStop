@@ -68,7 +68,7 @@ const Milestones = () => {
             >
               <button
                 onClick={() => setActiveIndex(activeIndex === i ? null : i)}
-                className="flex w-full items-center justify-between p-6 text-left focus:outline-none"
+                className="flex w-full items-center justify-between p-6 text-left focus:outline-none cursor-pointer"
               >
                 <div className="flex items-center gap-5">
                   <div className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-xl transition-all duration-300 ${activeIndex === i

@@ -26,7 +26,7 @@ const Hero = () => {
           NextStop transforms everyday commutes into a predictable, data-driven experience. By combining real-time edge computing with advanced predictive modeling and Google Maps integration, we’re delivering the most accurate bus tracking and ETA platform in Sri Lanka.
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a href="#features" className="inline-block bg-[#FF6B35] text-white px-10 py-5 rounded-full font-bold text-lg hover:bg-[#E6521F] transition-all shadow-xl hover:shadow-[#FF6B35]/30 hover:-translate-y-1">
+          <a href="#features" className="inline-block bg-[#FF6B35] text-white px-10 py-5 rounded-full font-bold text-lg hover:bg-[#E6521F] transition-all shadow-xl hover:shadow-[#FF6B35]/30 hover:-translate-y-1 cursor-pointer">
             Discover Features
           </a>
         </div>

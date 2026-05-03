@@ -34,7 +34,7 @@ const Documents = () => {
           <div className="inline-flex p-1 bg-gray-100 rounded-2xl">
             <button
               onClick={() => setActiveTab('docs')}
-              className={`px-8 py-3 rounded-xl text-sm font-bold transition-all ${activeTab === 'docs'
+              className={`px-8 py-3 rounded-xl text-sm font-bold transition-all cursor-pointer ${activeTab === 'docs'
                 ? 'bg-white text-[#FF6B35] shadow-lg'
                 : 'text-gray-500 hover:text-gray-700'
                 }`}
@@ -43,7 +43,7 @@ const Documents = () => {
             </button>
             <button
               onClick={() => setActiveTab('slides')}
-              className={`px-8 py-3 rounded-xl text-sm font-bold transition-all ${activeTab === 'slides'
+              className={`px-8 py-3 rounded-xl text-sm font-bold transition-all cursor-pointer ${activeTab === 'slides'
                 ? 'bg-white text-[#FF6B35] shadow-lg'
                 : 'text-gray-500 hover:text-gray-700'
                 }`}
@@ -66,7 +66,7 @@ const Documents = () => {
                 href={item.path}
                 target={item.path !== '#' ? "_blank" : undefined}
                 rel="noopener noreferrer"
-                className="text-[#FF6B35] text-xs font-bold uppercase tracking-wider flex items-center gap-1 mt-auto bg-white px-4 py-2 rounded-full border border-gray-200 group-hover:bg-[#FF6B35] group-hover:text-white transition-colors"
+                className="text-[#FF6B35] text-xs font-bold uppercase tracking-wider flex items-center gap-1 mt-auto bg-white px-4 py-2 rounded-full border border-gray-200 group-hover:bg-[#FF6B35] group-hover:text-white transition-colors cursor-pointer"
                 onClick={(e) => item.path === '#' && e.preventDefault()}
               >
                 View <Download size={14} />

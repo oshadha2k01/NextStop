@@ -47,7 +47,7 @@ const Navbar: React.FC<NavbarProps> = ({
               <a
                 key={link.id}
                 href={`#${link.id}`}
-                className={`relative text-[15px] font-medium transition-all duration-300 pb-2 border-b-2 ${activeSection === link.id
+                className={`relative text-[15px] font-medium transition-all duration-300 pb-2 border-b-2 cursor-pointer ${activeSection === link.id
                     ? 'text-[#FF6B35] border-[#FF6B35]'
                     : 'text-[#1F2937] border-transparent hover:text-[#FF6B35]'
                   }`}
@@ -69,7 +69,7 @@ const Navbar: React.FC<NavbarProps> = ({
             </div>
             <button
               onClick={(e) => handleSearch(e as any)}
-              className="bg-[#FF6B35] text-white p-2.5 rounded-full hover:bg-[#E6521F] transition-all flex items-center justify-center shrink-0 shadow-md active:scale-95"
+              className="bg-[#FF6B35] text-white p-2.5 rounded-full hover:bg-[#E6521F] transition-all flex items-center justify-center shrink-0 shadow-md active:scale-95 cursor-pointer"
             >
               <Search size={20} />
             </button>
@@ -78,7 +78,7 @@ const Navbar: React.FC<NavbarProps> = ({
 
         {/* Mobile Toggle */}
         <button
-          className="lg:hidden p-2 text-[#FF6B35]"
+          className="lg:hidden p-2 text-[#FF6B35] cursor-pointer"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
           {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
@@ -94,7 +94,7 @@ const Navbar: React.FC<NavbarProps> = ({
                 key={link.id}
                 href={`#${link.id}`}
                 onClick={() => setIsMenuOpen(false)}
-                className={`text-lg font-semibold transition-colors ${activeSection === link.id ? 'text-[#FF6B35]' : 'text-gray-600'
+                className={`text-lg font-semibold transition-colors cursor-pointer ${activeSection === link.id ? 'text-[#FF6B35]' : 'text-gray-600'
                   }`}
               >
                 {link.label}
@@ -111,7 +111,7 @@ const Navbar: React.FC<NavbarProps> = ({
             />
             <button
               onClick={(e) => handleSearch(e as any)}
-              className="bg-[#FF6B35] text-white p-3 rounded-full shadow-lg"
+              className="bg-[#FF6B35] text-white p-3 rounded-full shadow-lg cursor-pointer"
             >
               <Search size={20} />
             </button>

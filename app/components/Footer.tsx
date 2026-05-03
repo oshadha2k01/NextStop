@@ -189,10 +189,10 @@ const Footer = () => {
           <div>
             <h4 className="font-bold mb-4 uppercase text-white tracking-wide">Quick Links</h4>
             <ul className="space-y-3 font-medium">
-              <li><a href="#home" className="hover:text-white transition">Home</a></li>
-              <li><a href="#domain" className="hover:text-white transition">Domain</a></li>
-              <li><a href="#technologies" className="hover:text-white transition">Technologies</a></li>
-              <li><a href="#documents" className="hover:text-white transition">Documents</a></li>
+              <li><a href="#home" className="hover:text-white transition cursor-pointer">Home</a></li>
+              <li><a href="#domain" className="hover:text-white transition cursor-pointer">Domain</a></li>
+              <li><a href="#technologies" className="hover:text-white transition cursor-pointer">Technologies</a></li>
+              <li><a href="#documents" className="hover:text-white transition cursor-pointer">Documents</a></li>
             </ul>
           </div>
           <div>
@@ -200,7 +200,7 @@ const Footer = () => {
             <p className="mb-4">Subscribe to receive updates on our project progress.</p>
             <div className="flex bg-white rounded-lg p-1">
               <input type="email" placeholder="Email Address" className="p-3 w-full focus:outline-none text-[#1F2937] bg-transparent" />
-              <button className="bg-[#1F2937] px-6 rounded-md font-bold text-white hover:bg-black transition">Go</button>
+              <button className="bg-[#1F2937] px-6 rounded-md font-bold text-white hover:bg-black transition cursor-pointer">Go</button>
             </div>
           </div>
         </div>

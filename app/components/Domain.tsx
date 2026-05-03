@@ -33,7 +33,7 @@ const Domain = () => {
           {imageDomains.map((d, i) => (
             <div
               key={i}
-              className="group flex flex-col bg-white rounded-[2rem] border border-gray-100 shadow-sm hover:shadow-2xl hover:shadow-[#FF6B35]/10 transition-all duration-500 overflow-hidden"
+              className="group flex flex-col bg-white rounded-[2rem] border border-gray-100 shadow-sm hover:shadow-2xl hover:shadow-[#FF6B35]/10 transition-all duration-500 overflow-hidden cursor-pointer"
             >
               <div className="h-56 overflow-hidden relative">
                 <img

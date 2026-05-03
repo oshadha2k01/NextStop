@@ -83,7 +83,7 @@ const Team = () => {
         {/* Members Section */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-center">
           {members.map((m, i) => (
-            <div key={i} className="bg-white p-6 rounded-2xl border border-gray-100 hover:border-[#FF6B35] transition-all group flex flex-col h-full shadow-sm">
+            <div key={i} className="bg-white p-6 rounded-2xl border border-gray-100 hover:border-[#FF6B35] transition-all group flex flex-col h-full shadow-sm cursor-pointer">
               <div className={`w-24 h-24 md:w-28 md:h-28 rounded-full mx-auto mb-4 overflow-hidden flex items-center justify-center border-2 shrink-0 ${m.image ? 'border-[#FF6B35]' : 'bg-gray-100 border-transparent'}`}>
                 {m.image ? (
                   <img src={m.image} alt={m.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
