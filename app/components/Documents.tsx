@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { FileText, Download, Presentation } from 'lucide-react';
+import { FileText, Download, Presentation, BookOpen } from 'lucide-react';
 
 const Documents = () => {
-  const [activeTab, setActiveTab] = useState<'docs' | 'slides'>('docs');
+  const [activeTab, setActiveTab] = useState<'research' | 'docs' | 'slides'>('docs');
 
   const projectDocs = [
     { title: 'Project Charter', path: '/documents/charter.pdf' },
@@ -18,7 +18,11 @@ const Documents = () => {
     { title: 'Final Presentation', path: '/presentation/final.pdf' }
   ];
 
-  const currentItems = activeTab === 'docs' ? projectDocs : presentations;
+  const researchDocs = [
+    { title: 'Research Paper', path: '/research/rp.pdf' }
+  ];
+
+  const currentItems = activeTab === 'research' ? researchDocs : (activeTab === 'docs' ? projectDocs : presentations);
 
   return (
     <section id="documents" className="py-20 bg-white scroll-mt-20">
@@ -42,6 +46,15 @@ const Documents = () => {
               Project Documents
             </button>
             <button
+              onClick={() => setActiveTab('research')}
+              className={`px-8 py-3 rounded-xl text-sm font-bold transition-all cursor-pointer ${activeTab === 'research'
+                ? 'bg-white text-[#FF6B35] shadow-lg'
+                : 'text-gray-500 hover:text-gray-700'
+                }`}
+            >
+              Research Paper
+            </button>
+            <button
               onClick={() => setActiveTab('slides')}
               className={`px-8 py-3 rounded-xl text-sm font-bold transition-all cursor-pointer ${activeTab === 'slides'
                 ? 'bg-white text-[#FF6B35] shadow-lg'
@@ -56,7 +69,9 @@ const Documents = () => {
         <div className="grid md:grid-cols-4 gap-6">
           {currentItems.map((item, i) => (
             <div key={i} className="flex flex-col items-center p-6 bg-[#F7F8FA] rounded-xl border border-gray-200 hover:border-[#FF6B35] transition-colors cursor-pointer group">
-              {activeTab === 'docs' ? (
+              {activeTab === 'research' ? (
+                <BookOpen size={40} className="text-gray-400 mb-4 group-hover:text-[#FF6B35]" />
+              ) : activeTab === 'docs' ? (
                 <FileText size={40} className="text-gray-400 mb-4 group-hover:text-[#FF6B35]" />
               ) : (
                 <Presentation size={40} className="text-gray-400 mb-4 group-hover:text-[#FF6B35]" />
