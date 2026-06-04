@@ -9,7 +9,7 @@ interface NavbarProps {
   setIsMenuOpen: (open: boolean) => void;
   searchQuery: string;
   setSearchQuery: (query: string) => void;
-  handleSearch: (e: React.FormEvent) => void;
+  handleSearch: () => void;
 }
 
 const Navbar: React.FC<NavbarProps> = ({
@@ -24,6 +24,7 @@ const Navbar: React.FC<NavbarProps> = ({
     { id: 'home', label: 'Home' },
     { id: 'domain', label: 'Domain' },
     { id: 'features', label: 'Features' },
+    { id: 'showcase', label: 'App UI' },
     { id: 'technologies', label: 'Technologies' },
     { id: 'milestones', label: 'Milestones' },
     { id: 'documents', label: 'Resources' },
@@ -68,7 +69,7 @@ const Navbar: React.FC<NavbarProps> = ({
               />
             </div>
             <button
-              onClick={(e) => handleSearch(e as any)}
+              onClick={handleSearch}
               className="bg-[#FF6B35] text-white p-2.5 rounded-full hover:bg-[#E6521F] transition-all flex items-center justify-center shrink-0 shadow-md active:scale-95 cursor-pointer"
             >
               <Search size={20} />
@@ -110,7 +111,7 @@ const Navbar: React.FC<NavbarProps> = ({
               className="bg-gray-50 border-none rounded-full px-5 py-3 text-sm w-full focus:ring-2 focus:ring-[#FF6B35]"
             />
             <button
-              onClick={(e) => handleSearch(e as any)}
+              onClick={handleSearch}
               className="bg-[#FF6B35] text-white p-3 rounded-full shadow-lg cursor-pointer"
             >
               <Search size={20} />

@@ -6,6 +6,7 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Domain from './components/Domain';
 import Features from './components/Features';
+import MobileShowcase from './components/MobileShowcase';
 import Technologies from './components/Technologies';
 import Milestones from './components/Milestones';
 import Documents from './components/Documents';
@@ -18,12 +19,11 @@ export default function NextStopPortfolio() {
   const [searchQuery, setSearchQuery] = useState('');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const handleSearch = (e: React.FormEvent) => {
-    e.preventDefault();
+  const handleSearch = () => {
     if (!searchQuery) return;
 
     const target = searchQuery.toLowerCase();
-    const sections = ['home', 'domain', 'features', 'technologies', 'milestones', 'documents', 'team', 'contact'];
+    const sections = ['home', 'domain', 'features', 'showcase', 'technologies', 'milestones', 'documents', 'team', 'contact'];
     const match = sections.find(s => s.includes(target) || target.includes(s));
 
     if (match) {
@@ -43,7 +43,7 @@ export default function NextStopPortfolio() {
   }, []);
 
   useEffect(() => {
-    const sections = ['home', 'domain', 'features', 'technologies', 'milestones', 'documents', 'team', 'contact'];
+    const sections = ['home', 'domain', 'features', 'showcase', 'technologies', 'milestones', 'documents', 'team', 'contact'];
 
     const observerOptions = {
       root: null,
@@ -84,6 +84,7 @@ export default function NextStopPortfolio() {
         <Hero />
         <Domain />
         <Features />
+        <MobileShowcase />
         <Technologies />
         <Milestones />
         <Documents />
